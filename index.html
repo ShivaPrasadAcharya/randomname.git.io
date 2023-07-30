@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Name Generator-BPSG-454</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Styling for the button */
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the highlighted output text */
+        #output {
+            background-color: yellow;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        /* Styling for the bold name */
+        #output span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h3>Random Name Generator-BPSG-454</h3>
+    <button onclick="generateRandomName()">Invite an Innovative Soul</button>
+    <p id="output"></p>
+
+    <script>
+        // Array of names from which to generate random names
+        const names = ['Alaska Poudyal from Kapan, Kathmandu', 'Ambika Shah from Chakraghatta, Sarlahi' ,'Anjali Singh from Dhanusha', 'Archana Baral from Sinduli', 'Jennifer Chhetri Bajracharya from Asan', 'Narayani Pandey from Nuwakot', 'Samriddhi K.C. from Tikathali,  Lalitpur', 'Sapna Singh from Janakpur', 'Shaila Chaudhary from Lamahi, Dang','Yashoda Karki from Dolakha'];
+        let shuffledNames = [];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function generateRandomName() {
+            if (shuffledNames.length === 0) {
+                // If all names have been shown, reshuffle the array
+                shuffledNames = names.slice(); // Create a copy of the names array
+                shuffleArray(shuffledNames);
+            }
+
+            // Get the next name from the shuffled array
+            const randomName = shuffledNames.pop();
+
+            // Display the random name in the output paragraph
+            const outputElement = document.getElementById('output');
+            outputElement.innerHTML = `The chosen innovative soul is: <span>${randomName}</span>`;
+        }
+    </script>
+</body>
+</html>
