@@ -13,7 +13,7 @@
             background-color: blue;
             color: white;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 24px;
             border: none;
             cursor: pointer;
             margin-bottom: 20px;
@@ -23,13 +23,18 @@
         #output {
             background-color: yellow;
             padding: 10px;
-            font-size: 18px;
+            font-size: 32px;
         }
 
         /* Styling for the bold name */
         #output span {
             font-weight: bold;
         }
+        #developedby {
+      font-style: italic;
+      color: red;
+    }
+
     </style>
 </head>
 <body>
@@ -39,7 +44,7 @@
 
     <script>
         // Array of names from which to generate random names
-        const names = ['Alaska Poudyal from Kapan, Kathmandu', 'Ambika Shah from Chakraghatta, Sarlahi' ,'Anjali Singh from Dhanusha', 'Archana Baral from Sinduli', 'Jennifer Chhetri Bajracharya from Asan', 'Narayani Pandey from Nuwakot', 'Samriddhi K.C. from Tikathali,  Lalitpur', 'Sapna Singh from Janakpur', 'Shaila Chaudhary from Lamahi, Dang','Yashoda Karki from Dolakha'];
+        const names = ['Alaska Poudyal from Kapan, Kathmandu', 'Ambika Shah from Chakraghatta, Sarlahi' ,'Anjali Singh from Dhanusha', 'Archana Baral from Sinduli', 'Jennifer Chhetri Bajracharya from Asan', 'Narayani Pandey from Nuwakot', 'Prikshya Chaudhary from Dang', 'Rubi Kumari Mahato from Siraha', 'Samriddhi K.C. from Tikathali,  Lalitpur', 'Sapna Singh from Janakpur', 'Shaila Chaudhary from Lamahi, Dang','Yashoda Karki from Dolakha'];
         let shuffledNames = [];
 
         function shuffleArray(array) {
@@ -61,8 +66,14 @@
 
             // Display the random name in the output paragraph
             const outputElement = document.getElementById('output');
-            outputElement.innerHTML = `The chosen innovative soul is: <span>${randomName}</span>`;
+            outputElement.innerHTML = `The chosen innovative soul for presentation is:<br><span>${randomName}</span>`;
+
         }
     </script>
 </body>
+<footer>
+    <p id="developedby"><u><b>Developed By:</b></u><br> Shiva Prasad Acharya (M.Sc.; LL.M)<br> Shiva.Acharya@supremecourt.gov.np <br>
+    </p>
+  </footer>
+</html>
 </html>
